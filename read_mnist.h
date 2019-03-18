@@ -46,10 +46,12 @@ inline bool is_little_endian();
 
 inline void read_mnist_header(ifstream &, mnist_header &);
 
-void parse_mnist_image(std::ifstream &, const mnist_header &, float_t, float_t,
-                       int, int, vec_t &);
+void parse_mnist_image(
+    std::ifstream &, const mnist_header &, float_t, float_t, int, int, vec_t &);
 
-void read_mnist_images(const string &, vector<vec_t> *, float_t, float_t, int,
-                       int);
+void read_mnist_images(
+    const string &, vector<vec_t> *, float_t, float_t, int, int);
 
 void read_mnist_labels(const string, vector<label_t> *);
+
+void print_vec(vec_t);

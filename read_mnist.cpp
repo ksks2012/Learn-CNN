@@ -28,9 +28,13 @@ inline void read_mnist_header(ifstream &fin, mnist_header &header) {
         cout << "file error" << endl;
 }
 
-void parse_mnist_image(std::ifstream &fin, const mnist_header &header,
-                       float_t scale_min, float_t scale_max, int x_padding,
-                       int y_padding, vec_t &dst) {
+void parse_mnist_image(std::ifstream &fin,
+                       const mnist_header &header,
+                       float_t scale_min,
+                       float_t scale_max,
+                       int x_padding,
+                       int y_padding,
+                       vec_t &dst) {
     const int width = header.num_cols + 2 * x_padding;
     const int height = header.num_rows + 2 * y_padding;
 
@@ -93,8 +97,11 @@ void parse_mnist_image(std::ifstream &fin, const mnist_header &header,
  * 255 255 255   -1.0  1.0  1.0  1.0 -1.0
  *
  **/
-void read_mnist_images(const string &image_file, vector<vec_t> *images,
-                       float_t scale_min, float_t scale_max, int x_padding,
+void read_mnist_images(const string &image_file,
+                       vector<vec_t> *images,
+                       float_t scale_min,
+                       float_t scale_max,
+                       int x_padding,
                        int y_padding) {
     if (x_padding < 0 || y_padding < 0)
         cout << "padding size must not be negative" << endl;
@@ -113,8 +120,8 @@ void read_mnist_images(const string &image_file, vector<vec_t> *images,
     images->resize(header.num_items);
     for (uint32_t i = 0; i < header.num_items; i++) {
         vec_t image;
-        parse_mnist_image(fin, header, scale_min, scale_max, x_padding,
-                          y_padding, image);
+        parse_mnist_image(
+            fin, header, scale_min, scale_max, x_padding, y_padding, image);
         (*images)[i] = image;
     }
 }
@@ -150,5 +157,16 @@ void read_mnist_labels(const string label_file, vector<label_t> *labels) {
         uint8_t label;
         fin.read(reinterpret_cast<char *>(&label), 1);
         (*labels)[i] = static_cast<label_t>(label);
+    }
+}
+
+void print_vec(vec_t vec) {
+    size_t width = sqrt(vec.size());
+
+    for (size_t i = 0; i < width; ++i) {
+        for (size_t j = 0; j < width; ++j) {
+            cout << vec[i * width + j] << " ";
+        }
+        cout << endl;
     }
 }
