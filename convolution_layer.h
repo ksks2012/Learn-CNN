@@ -10,7 +10,7 @@
 
 #include "read_mnist.h"
 
-void conv(vec_t &,
+void conv(tensor_t &,
           tensor_t &,
           size_t,
           size_t,

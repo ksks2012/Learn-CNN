@@ -2,6 +2,7 @@
 
 refer tiny_dnn/example/mnist
 
+    v0.41 fix input channel
 v0.4 cutting activation function
 
 v0.3 pooling_layer
