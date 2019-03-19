@@ -25,4 +25,4 @@ void rand_vec(vec_t &);
 
 void convolution(vec_t, vec_t &, vec_t &, size_t, size_t, size_t);
 
-void Relu(vec_t &);
+void func_ReLU(vec_t &);

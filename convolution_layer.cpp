@@ -33,6 +33,8 @@ void conv(vec_t &image,
                     in_width,
                     map_size,
                     window_size);
+
+        func_ReLU(feature_map[i]);
     }
 
     cout << feature_map.size() << endl;
@@ -78,4 +80,8 @@ void convolution(vec_t image,
     }
 }
 
-void Relu(vec_t &feature_map) {}
+void func_ReLU(vec_t &feature_map) {
+    for (size_t i = 0; i < feature_map.size(); ++i) {
+        feature_map[i] = feature_map[i] > 0.0 ? feature_map[i] : 0.0;
+    }
+}

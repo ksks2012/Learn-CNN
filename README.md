@@ -4,6 +4,7 @@ refer tiny_dnn/example/mnist
 
 v0.2 convolution_layer
 
+    v0.14 ReLU done
     v0.13 conv() done
     v0.12 basic conv()
     v0.11 fix bug
