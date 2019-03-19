@@ -2,6 +2,10 @@
 
 refer tiny_dnn/example/mnist
 
+
+v0.3 pooling_layer
+
+    v0.21 fix calculation of size
 v0.2 convolution_layer
 
     v0.14 ReLU done

@@ -11,11 +11,7 @@ void conv(vec_t &image,
           size_t h_stride,
           size_t w_dilation,
           size_t h_dilation) {
-    cout << image.size() << endl;
-
-    // image.resize(28 * 28);
-
-    size_t map_size = in_width - window_size + 1;
+    size_t map_size = (in_width - window_size) / w_stride + 1;
 
     tensor_t feature_map(out_channels);
 
@@ -28,6 +24,7 @@ void conv(vec_t &image,
 
         feature_map[i].resize(map_size * map_size);
 
+        // TODO: stride
         convolution(image,
                     feature_map[i],
                     feature_detector[i],
@@ -37,8 +34,6 @@ void conv(vec_t &image,
 
         func_ReLU(feature_map[i]);
     }
-
-    cout << feature_map.size() << endl;
 
     map_ptr = feature_map;
 }

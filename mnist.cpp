@@ -1,4 +1,5 @@
 #include "convolution_layer.h"
+#include "pooling_layer.h"
 #include "read_mnist.h"
 
 void train(void);
@@ -42,6 +43,8 @@ void train() {
          5,
          1,
          6);  // C1, 1@32x32-in, 6@28x28-out
+
+    max_pool(feature_map, 28, 28, 6, 2, 2);  // S2, 6@28x28-in, 6@14x14-out
 
     // cout << train_images[0].size();
 }
