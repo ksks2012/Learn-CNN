@@ -2,6 +2,7 @@
 
 refer tiny_dnn/example/mnist
 
+v0.4 cutting activation function
 
 v0.3 pooling_layer
 
