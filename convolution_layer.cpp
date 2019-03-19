@@ -1,6 +1,7 @@
 #include "convolution_layer.h"
 
 void conv(vec_t &image,
+          tensor_t &map_ptr,
           size_t in_width,
           size_t in_height,
           size_t window_size,
@@ -39,7 +40,7 @@ void conv(vec_t &image,
 
     cout << feature_map.size() << endl;
 
-    // image = feature_map;
+    map_ptr = feature_map;
 }
 
 void rand_vec(vec_t &vec) {

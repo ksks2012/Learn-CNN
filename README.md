@@ -10,4 +10,7 @@ v0.2 convolution_layer
     v0.11 fix bug
 v0.1 train file & test file read
 
+TODO:
 *maybe write cuda version
+
+Leaky_ReLU & Sigmoid ... (more func)
