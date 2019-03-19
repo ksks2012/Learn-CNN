@@ -20,7 +20,7 @@ void conv(vec_t &image,
 
     tensor_t feature_detector(out_channels);
 
-    for (int i = 0; i < out_channels; ++i) {
+    for (size_t i = 0; i < out_channels; ++i) {
         feature_detector[i].resize(window_size * window_size);
 
         rand_vec(feature_detector[i]);
@@ -47,35 +47,35 @@ void rand_vec(vec_t &vec) {
         vec[i] = rand() % 2;
     }
 
-    print_vec(vec);
+    // print_vec(vec);
 }
 
 void convolution(vec_t image,
-                 vec_t &map,
+                 vec_t &feature_map,
                  vec_t &detector,
                  size_t image_size,
                  size_t map_size,
                  size_t window_size) {
     for (size_t i = 0; i < map_size; ++i) {
         for (size_t j = 0; j < map_size; ++j) {
-            map[i * image_size + j] = 0;
+            feature_map[i * map_size + j] = 0;
 
             for (size_t m = 0; m < window_size; ++m) {
                 for (size_t n = 0; n < window_size; ++n) {
-                    cout << "fixed " << i << " " << j << " " << m << " " << n
-                         << endl;
-                    cout << "offset map:" << i * image_size + j << " image "
-                         << (i + m) * image_size + j + n << " "
-                         << m * window_size + n << endl;
-                    map.at(i * image_size + j) +=
+                    // cout << "fixed " << i << " " << j << " " << m << " " << n
+                    //      << endl;
+                    // cout << "offset feature_map:" << i * image_size + j << "
+                    // image "
+                    //      << (i + m) * image_size + j + n << " "
+                    //      << m * window_size + n << endl;
+                    feature_map.at(i * map_size + j) +=
                         image.at((i + m) * image_size + j + n) *
                         detector.at(m * window_size + n);
-                    // map[i * image_size + j] +=
-                    //     image[(i + m) * image_size + j + n] *
-                    //     detector[m * image_size + n];
                 }
             }
-            fgetc(stdin);
+            // fgetc(stdin);
         }
     }
 }
+
+void Relu(vec_t &feature_map) {}

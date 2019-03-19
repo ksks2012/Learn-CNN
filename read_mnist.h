@@ -54,4 +54,4 @@ void read_mnist_images(
 
 void read_mnist_labels(const string, vector<label_t> *);
 
-void print_vec(vec_t);
+void print_vec(vec_t &);

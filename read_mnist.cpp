@@ -160,7 +160,7 @@ void read_mnist_labels(const string label_file, vector<label_t> *labels) {
     }
 }
 
-void print_vec(vec_t vec) {
+void print_vec(vec_t &vec) {
     size_t width = sqrt(vec.size());
 
     for (size_t i = 0; i < width; ++i) {
