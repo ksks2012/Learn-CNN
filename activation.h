@@ -2,7 +2,7 @@
 
 #include "read_mnist.h"
 
-void func_ReLU(vec_t &);
+void func_ReLU(tensor_t &);
 
 // TODO: Leaky_ReLU & Sigmoid
 // void func_Leaky_ReLU(vec_t &);

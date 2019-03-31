@@ -2,6 +2,10 @@
 
 refer tiny_dnn/example/mnist
 
+v0.6 fixed same vector error?
+
+v0.5 check all channel had been calculate
+
     v0.41 fix input channel
 v0.4 cutting activation function
 
