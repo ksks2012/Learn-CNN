@@ -35,18 +35,15 @@ void conv(tensor_t &image,
                         map_size,
                         window_size);
         }
+        fgetc(stdin);
     }
     map_ptr = feature_map;
 }
 
 void rand_vec(vec_t &vec) {
-    srand(time(NULL));
-
     for (size_t i = 0; i < vec.size(); ++i) {
         vec[i] = rand() % 2;
     }
-    // print_vec(vec);
-    // fgetc(stdin);
 }
 
 void convolution(vec_t image,

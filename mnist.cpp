@@ -12,6 +12,8 @@ void check_map(tensor_t);
 using namespace std;
 
 int main(int argc, char *argv[]) {
+    srand(time(NULL));
+
     switch (atoi(argv[1])) {
         case 1:
             train();
